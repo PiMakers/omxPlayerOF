@@ -1,0 +1,18 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "/mnt/LinuxData/OF/openFrameworks/libs/openFrameworks"
+        },
+        {
+            "path": "/mnt/LinuxData/OF/myAddons/ofxomxPlayerOF"
+        }
+    ],
+    "settings": {
+        "files.associations": {
+            "cctype": "cpp"
+        }
+    }
+}

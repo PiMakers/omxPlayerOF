@@ -1,0 +1,167 @@
+#pragma once
+
+#include "ofMain.h"
+
+#include <termios.h>
+/*
+#include <sys/mman.h>
+#include <sys/ioctl.h>
+*/
+#include <getopt.h>
+/*
+#include <string.h>
+*/
+#define AV_NOWARN_DEPRECATED
+
+extern "C" {
+#include <libavformat/avformat.h>
+#include <libavutil/avutil.h>
+};
+
+#include "OMXStreamInfo.h"
+
+#include "utils/log.h"
+#include "linux/RBP.h"
+
+#include "OMXVideo.h"
+#include "OMXAudioCodecOMX.h"
+#include "utils/PCMRemap.h"
+#include "OMXClock.h"
+#include "OMXAudio.h"
+#include "OMXReader.h"
+#include "OMXPlayerVideo.h"
+#include "OMXPlayerAudio.h"
+#include "OMXPlayerSubtitles.h"
+#include "OMXControl.h"
+#include "DllOMX.h"
+#include "Srt.h"
+#include "KeyConfig.h"
+#include "utils/Strprintf.h"
+#include "Keyboard.h"
+
+#include <string>
+#include <utility>
+
+#include "version.h"
+
+// when we repeatedly seek, rather than play continuously
+#define TRICKPLAY(speed) (speed < 0 || speed > 4 * DVD_PLAYSPEED_NORMAL)
+
+#define DISPLAY_TEXT(text, ms) if(m_osd) m_player_subtitles.DisplayText(text, ms)
+
+#define DISPLAY_TEXT_SHORT(text) DISPLAY_TEXT(text, 1000)
+#define DISPLAY_TEXT_LONG(text) DISPLAY_TEXT(text, 2000)
+
+class OmxPubHubPlayer : public ofThread {
+
+private:
+
+typedef enum {CONF_FLAGS_FORMAT_NONE, CONF_FLAGS_FORMAT_SBS, CONF_FLAGS_FORMAT_TB, CONF_FLAGS_FORMAT_FP } FORMAT_3D_T;
+enum PCMChannels  *m_pChannelMap        = NULL;
+
+long              m_Volume              = 0;
+long              m_Amplification       = 0;
+bool              m_NativeDeinterlace   = false;
+bool              m_HWDecode            = false;
+bool              m_osd                 = false;
+bool              m_no_keys             = false;
+std::string       m_external_subtitles_path;
+bool              m_has_external_subtitles = false;
+std::string       m_font_path           = "/usr/share/fonts/truetype/freefont/FreeSans.ttf";
+std::string       m_italic_font_path    = "/usr/share/fonts/truetype/freefont/FreeSansOblique.ttf";
+std::string       m_dbus_name           = "org.mpris.MediaPlayer2.omxplayer";
+bool              m_asked_for_font      = false;
+bool              m_asked_for_italic_font = false;
+float             m_font_size           = 0.055f;
+bool              m_centered            = false;
+bool              m_ghost_box           = true;
+unsigned int      m_subtitle_lines      = 3;
+bool              m_Pause               = false;
+OMXReader         m_omx_reader;
+int               m_audio_index_use     = 0;
+OMXClock          *m_av_clock           = NULL;
+OMXControl        m_omxcontrol;
+Keyboard          *m_keyboard           = NULL;
+OMXAudioConfig    m_config_audio;
+OMXVideoConfig    m_config_video;
+OMXPacket         *m_omx_pkt            = NULL;
+bool              m_no_hdmi_clock_sync  = false;
+bool              m_stop                = false;
+int               m_subtitle_index      = -1;
+DllBcmHost        m_BcmHost;
+OMXPlayerVideo    m_player_video;
+OMXPlayerAudio    m_player_audio;
+OMXPlayerSubtitles  m_player_subtitles;
+int               m_tv_show_info        = 0;
+bool              m_has_video           = false;
+bool              m_has_audio           = false;
+bool              m_has_subtitle        = false;
+bool              m_gen_log             = false;
+bool              m_loop                = false;
+
+enum{ERROR=-1,SUCCESS,ONEBYTE};
+/*
+class OmxPubHubPlayer {
+
+public:
+
+    CRBP        g_RBP;
+    COMXCore    g_OMX;
+*/
+public:
+
+    OmxPubHubPlayer ();
+    ~OmxPubHubPlayer ();
+
+    int OmxPubHubPlayerCli(int argc, char *argv[]);
+    int exit();
+
+protected:
+
+    CRBP        g_RBP;
+    COMXCore    g_OMX;
+
+    bool        m_stats   = false;
+    bool        m_refresh = false;
+    bool        m_send_eos= false;
+    TV_DISPLAY_STATE_T   tv_state;
+    FORMAT_3D_T           m_3d                  = CONF_FLAGS_FORMAT_NONE;
+
+private:
+
+  void threadedFunction();
+
+  #define S(x) (int)(DVD_PLAYSPEED_NORMAL*(x))
+  int playspeeds[20] = {S(0), S(1/16.0), S(1/8.0), S(1/4.0), S(1/2.0), S(0.975), S(1.0), S(1.125), S(-32.0), S(-16.0), S(-8.0), S(-4), S(-2), S(-1), S(1), S(2.0), S(4.0), S(8.0), S(16.0), S(32.0)};
+  const int playspeed_slow_min = 0, playspeed_slow_max = 7, playspeed_rew_max = 8, playspeed_rew_min = 13, playspeed_normal = 14, playspeed_ff_min = 15, playspeed_ff_max = 19;
+  int playspeed_current = playspeed_normal;
+  double m_last_check_time = 0.0; ///*H Moved to root because Threaded func.
+  float m_latency = 0.0f;
+
+  int control_err= -1;
+  bool                  m_seek_flush          = false;
+  double                startpts              = 0;
+  bool                  m_chapter_seek        = false;
+  double                m_incr                = 0;
+  bool idle = false;
+  float m_threshold      = -1.0f; // amount of audio/video required to come out of buffering
+
+///    vector<int> signals;
+
+///    void sig_handler(int s);
+    void print_usage();
+    void print_keybindings();
+    void print_version();
+    /*static*/ void PrintSubtitleInfo();
+    /*static*/ void FlushStreams(double pts);
+    /*static*/ void SetSpeed(int iSpeed);
+    /*static*/ float get_display_aspect_ratio(HDMI_ASPECT_T aspect);
+    /*static*/ float get_display_aspect_ratio(SDTV_ASPECT_T aspect);
+    static void CallbackTvServiceCallback(void *userdata, uint32_t reason, uint32_t param1, uint32_t param2);
+    void SetVideoMode(int width, int height, int fpsrate, int fpsscale, FORMAT_3D_T is3d);
+    bool Exists(const std::string& path);
+    bool IsURL(const std::string& str);
+    bool IsPipe(const std::string& str);
+    /*static*/ int get_mem_gpu(void);
+    /*static*/ void blank_background(uint32_t rgba);
+};

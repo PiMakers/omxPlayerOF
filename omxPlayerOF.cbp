@@ -1,0 +1,1766 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="omxPlayerOF_linuxarmv7l" />
+		<Option makefile_is_custom="1" />
+		<Option execution_dir="./" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="addons/;src/;build config/;src/omxplayer/;src/omxplayer/ffmpeg_compiled/usr/local/lib/;src/omxplayer/ffmpeg_compiled/usr/local/include/libswresample/;src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig/;src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/;src/omxplayer/linux/;src/omxplayer/cores/;src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/;src/omxplayer/utils/;src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter/;src/omxplayer/ffmpeg_compiled/usr/local/include/libavformat/;src/omxplayer/ffmpeg_compiled/usr/local/include/libswscale/;src/omxplayer/guilib/;src/omxplayer/fonts/;src/omxplayer/ffmpeg_compiled/usr/local/include/libavdevice/;local_addons/;local_addons/ofxomxPlayerOF/;local_addons/ofxomxPlayerOF/src/;local_addons/ofxomxPlayerOF/src/omxplayer/;local_addons/ofxomxPlayerOF/src/omxplayer/cores/;local_addons/ofxomxPlayerOF/src/omxplayer/fonts/;local_addons/ofxomxPlayerOF/src/omxplayer/guilib/;local_addons/ofxomxPlayerOF/src/omxplayer/linux/;local_addons/ofxomxPlayerOF/src/omxplayer/utils/;local_addons/ofxomxPlayerOF/libs/;local_addons/ofxomxPlayerOF/libs/include/;local_addons/ofxomxPlayerOF/libs/lib/;local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/;local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/;local_addons/ofxomxPlayerOF/libs/include/libavcodec/;local_addons/ofxomxPlayerOF/libs/include/libavdevice/;local_addons/ofxomxPlayerOF/libs/include/libavfilter/;local_addons/ofxomxPlayerOF/libs/include/libavformat/;local_addons/ofxomxPlayerOF/libs/include/libavutil/;local_addons/ofxomxPlayerOF/libs/include/libswresample/;local_addons/ofxomxPlayerOF/libs/include/libswscale/;local_addons/ofxomxPlayerOF/example-players/;local_addons/ofxomxPlayerOF/example/;local_addons/ofxomxPlayerOF/example/src/;" />
+		<MakeCommands>
+			<Build command="$make -f $makefile $target" />
+			<CompileFile command="$make -f $makefile $file" />
+			<Clean command="$make -f $makefile Clean$target" />
+			<DistClean command="$make -f $makefile distclean$target" />
+			<AskRebuildNeeded command="$make -q -f $makefile $target" />
+			<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+		</MakeCommands>
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/$(PROJECT_NAME)_debug" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/Debug/" />
+				<Option external_deps="../../openFrameworksM/libs/openFrameworksCompiled/lib/linux64/libopenFrameworksDebug.a;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+				<MakeCommands>
+					<Build command="$make -f $makefile $target" />
+					<CompileFile command="$make -f $makefile $file" />
+					<Clean command="$make -f $makefile Clean$target" />
+					<DistClean command="$make -f $makefile distclean$target" />
+					<AskRebuildNeeded command="$make -q -f $makefile $target" />
+					<SilentBuild command="$make -f $makefile $target &gt; $(CMD_NULL)" />
+				</MakeCommands>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/$(PROJECT_NAME)" prefix_auto="1" extension_auto="1" />
+				<Option working_dir="bin" />
+				<Option object_output="obj/Release/" />
+				<Option external_deps="../../openFrameworksM/libs/openFrameworksCompiled/lib/linux64/libopenFrameworks.a;" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Option projectLinkerOptionsRelation="2" />
+			</Target>
+		</Build>
+		<ExtraCommands>
+			<Add before='[[ OF_APPNAME &lt;- IO.ExecuteAndGetOutputAndError(_T(&quot;make -n print-APPNAME&quot;),true); ]]' />
+			<Add before='[[ OF_APPNAME = OF_APPNAME.AfterLast( _T(&quot;=&quot;)); ]]' />
+			<Add before='[[ OF_APPNAME = OF_APPNAME.BeforeLast( _T(&quot;\n&quot;)); ]]' />
+			<Add before="[[ GetProjectManager().GetActiveProject().SetTitle( OF_APPNAME ); ]]" />
+		</ExtraCommands>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/addon_config.mk">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OMXPlayerPlaylist.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OMXPlayerPlaylist.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OMXPlayerPlaylist.h.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OMXPlayerSync.cpp.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OMXPlayerSync.cppx">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OMXPlayerSync.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OMXPlayerSync.h.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OmxPubHubPlayer.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OmxPubHubPlayer.cpp.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OmxPubHubPlayer.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/OmxPubHubPlayer.h.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/ofApp.cpp.omxplayerSync">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/ofxPubHubBasePlayer.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayer.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayer.cpp.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayer.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayer.h.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayer.hx">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayerSync2.cpp.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayerSync2.cppx">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayerSync2.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/omxplayerSync2.h.bak">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/puBHubPlayer.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example-players/puBHubPlayer.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example-players/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/Makefile">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/addons.make">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/config.make">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/example.layout">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/example.workspace">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/omxPlayerOF.workspace">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/src/main.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/src/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/src/ofApp.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/src/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/example/src/ofApp.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/example/src/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/avcodec.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/avdct.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/avfft.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/d3d11va.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/dirac.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/dv_profile.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/dxva2.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/jni.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/mediacodec.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/qsv.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/vaapi.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/vda.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/vdpau.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/version.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/videotoolbox.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/vorbis_parser.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavcodec/xvmc.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavcodec/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavdevice/avdevice.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavdevice/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavdevice/version.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavdevice/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavfilter/avfilter.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavfilter/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavfilter/avfiltergraph.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavfilter/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavfilter/buffersink.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavfilter/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavfilter/buffersrc.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavfilter/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavfilter/version.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavfilter/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavformat/avformat.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavformat/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavformat/avio.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavformat/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavformat/version.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavformat/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/adler32.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/aes.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/aes_ctr.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/attributes.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/audio_fifo.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/avassert.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/avconfig.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/avstring.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/avutil.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/base64.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/blowfish.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/bprint.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/bswap.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/buffer.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/camellia.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/cast5.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/channel_layout.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/common.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/cpu.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/crc.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/des.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/dict.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/display.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/downmix_info.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/error.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/eval.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/ffversion.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/fifo.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/file.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/frame.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/hash.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/hmac.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/hwcontext.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/hwcontext_cuda.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/hwcontext_dxva2.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/hwcontext_qsv.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/hwcontext_vaapi.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/hwcontext_vdpau.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/imgutils.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/intfloat.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/intreadwrite.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/lfg.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/log.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/lzo.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/macros.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/mastering_display_metadata.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/mathematics.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/md5.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/mem.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/motion_vector.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/murmur3.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/opt.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/parseutils.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/pixdesc.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/pixelutils.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/pixfmt.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/random_seed.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/rational.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/rc4.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/replaygain.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/ripemd.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/samplefmt.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/sha.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/sha512.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/spherical.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/stereo3d.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/tea.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/threadmessage.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/time.hx">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/timecode.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/timestamp.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/tree.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/twofish.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/version.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libavutil/xtea.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libavutil/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libswresample/swresample.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libswresample/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libswresample/version.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libswresample/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libswscale/swscale.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libswscale/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/include/libswscale/version.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/include/libswscale/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavcodec.so">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavcodec.so.57">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavcodec.so.57.89.100">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavdevice.so">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavdevice.so.57">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavdevice.so.57.6.100">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavfilter.so">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavfilter.so.6">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavfilter.so.6.82.100">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavformat.so">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavformat.so.57">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavformat.so.57.71.100">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavutil.so">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavutil.so.55">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libavutil.so.55.58.100">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libswresample.so">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libswresample.so.2">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libswresample.so.2.7.100">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libswscale.so">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libswscale.so.4">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/libswscale.so.4.6.100">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/libavcodec.pc">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/libavdevice.pc">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/libavfilter.pc">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/libavformat.pc">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/libavutil.pc">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/libswresample.pc">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/libswscale.pc">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/libs/lib/linuxarmv6l/pkgconfig/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/ofxomxPlayerOF.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/BitstreamConverter.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/BitstreamConverter.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/COPYING">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/DllAvCodec.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/DllAvFormat.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/DllAvUtil.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/DllBCM.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/DllOMX.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/DllSwResample.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/DynamicDll.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/DynamicDll.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/File.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/File.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/KeyConfig.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/KeyConfig.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Keyboard.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Keyboard.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Makefile">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Makefile.ffmpeg">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXAudio.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXAudio.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXAudioCodecOMX.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXAudioCodecOMX.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXClock.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXClock.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXControl.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXControl.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXCore.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXCore.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXOverlay.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXOverlayCodec.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXOverlayCodecText.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXOverlayCodecText.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXOverlayText.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXPlayerAudio.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXPlayerAudio.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXPlayerSubtitles.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXPlayerSubtitles.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXPlayerVideo.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXPlayerVideo.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXReader.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXReader.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXStreamInfo.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXStreamInfo.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXSubtitleTagSami.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXSubtitleTagSami.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXThread.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXThread.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXVideo.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/OMXVideo.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/RBP.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/README.md">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Srt.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Srt.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Subtitle.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/SubtitleRenderer.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/SubtitleRenderer.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Unicode.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/Unicode.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/cores/IAudioCallback.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/cores/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/dbuscontrol.sh">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/fonts/FreeSans.ttf">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/fonts/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/fonts/FreeSansOblique.ttf">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/fonts/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/gen_version.sh">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/guilib/Geometry.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/guilib/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/help.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/keys.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/ConvUtils.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/OMXAlsa.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/OMXAlsa.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/PlatformDefs.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/PlatformInclude.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/RBP.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/RBP.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/XMemUtils.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/XMemUtils.d">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/XMemUtils.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/XSyncUtils.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/stat_utf8.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/linux/stdio_utf8.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/linux/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/omxplayer">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/omxplayer.cppx">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/prepare-native-raspbian.sh">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/profiler.sh">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/system.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/Clamp.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/Enforce.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/FunctorVisitor.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/LockBlock.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/Mailbox.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/MathUtils.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/PCMRemap.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/PCMRemap.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/RegExp.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/RegExp.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/ScopeExit.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/SingleLock.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/StdString.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/Strprintf.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/log.cpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/log.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/traits.hpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/variant-impl.hpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/utils/variant.hpp">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/utils/" />
+		</Unit>
+		<Unit filename="../../myAddons/ofxomxPlayerOF/src/omxplayer/version.h">
+			<Option virtualFolder="local_addons/ofxomxPlayerOF/src/omxplayer/" />
+		</Unit>
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/of3dPrimitives.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/of3dPrimitives.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/of3dUtils.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/of3dUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/ofCamera.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/ofCamera.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/ofEasyCam.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/ofEasyCam.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/ofMesh.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/ofNode.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/3d/ofNode.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppBaseWindow.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppEGLWindow.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppEGLWindow.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppGLFWWindow.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppGLFWWindow.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppGlutWindow.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppGlutWindow.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppNoWindow.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppNoWindow.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppRunner.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofAppRunner.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofBaseApp.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofBaseApp.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofIcon.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofMainLoop.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofMainLoop.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/app/ofWindowSettings.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/communication/ofArduino.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/communication/ofArduino.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/communication/ofSerial.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/communication/ofSerial.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/events/ofEvent.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/events/ofEventUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/events/ofEvents.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/events/ofEvents.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofBufferObject.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofBufferObject.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofFbo.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofFbo.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofGLBaseTypes.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofGLProgrammableRenderer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofGLProgrammableRenderer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofGLRenderer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofGLRenderer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofGLUtils.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofGLUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofLight.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofLight.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofMaterial.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofMaterial.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofShader.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofShader.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofTexture.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofTexture.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofVbo.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofVbo.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofVboMesh.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/gl/ofVboMesh.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/of3dGraphics.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/of3dGraphics.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofBitmapFont.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofBitmapFont.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofCairoRenderer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofCairoRenderer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofGraphics.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofGraphics.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofGraphicsBaseTypes.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofGraphicsBaseTypes.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofGraphicsConstants.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofImage.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofImage.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofPath.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofPath.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofPixels.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofPixels.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofPolyline.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofRendererCollection.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofRendererCollection.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofTessellator.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofTessellator.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofTrueTypeFont.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/graphics/ofTrueTypeFont.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofMath.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofMath.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofMathConstants.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofMatrix3x3.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofMatrix3x3.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofMatrix4x4.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofMatrix4x4.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofQuaternion.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofQuaternion.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofVec2f.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofVec2f.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofVec3f.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofVec4f.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofVec4f.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/math/ofVectorMath.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/ofMain.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofFmodSoundPlayer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofFmodSoundPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofOpenALSoundPlayer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofOpenALSoundPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofRtAudioSoundStream.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofRtAudioSoundStream.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundBaseTypes.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundBaseTypes.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundBuffer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundBuffer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundPlayer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundStream.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundStream.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/sound/ofSoundUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofBaseTypes.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofBaseTypes.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofColor.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofColor.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofParameter.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofParameter.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofParameterGroup.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofParameterGroup.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofPoint.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofRectangle.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofRectangle.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/types/ofTypes.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofConstants.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofFileUtils.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofFileUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofFpsCounter.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofFpsCounter.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofJson.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofLog.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofLog.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofMatrixStack.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofMatrixStack.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofNoise.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofSystemUtils.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofSystemUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofThread.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofThread.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofThreadChannel.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofTimer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofTimer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofURLFileLoader.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofURLFileLoader.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofUtils.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofXml.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/utils/ofXml.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofAVFoundationGrabber.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofAVFoundationPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofAVFoundationVideoPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofDirectShowGrabber.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofDirectShowGrabber.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofDirectShowPlayer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofDirectShowPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofGstUtils.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofGstUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofGstVideoGrabber.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofGstVideoGrabber.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofGstVideoPlayer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofGstVideoPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQTKitGrabber.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQTKitMovieRenderer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQTKitPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQtUtils.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQtUtils.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQuickTimeGrabber.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQuickTimeGrabber.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQuickTimePlayer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofQuickTimePlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofVideoBaseTypes.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofVideoGrabber.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofVideoGrabber.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofVideoPlayer.cpp" />
+		<Unit filename="../../openFrameworks/libs/openFrameworks/video/ofVideoPlayer.h" />
+		<Unit filename="../../openFrameworks/libs/openFrameworksCompiled/project/linuxarmv7l/config.linuxarmv7l.stretch.mk">
+			<Option virtualFolder="build config/" />
+		</Unit>
+		<Unit filename="Makefile">
+			<Option virtualFolder="build config/" />
+		</Unit>
+		<Unit filename="addons.make">
+			<Option virtualFolder="build config/" />
+		</Unit>
+		<Unit filename="config.make">
+			<Option virtualFolder="build config" />
+		</Unit>
+		<Unit filename="src/OmxPubHubPlayer.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/OmxPubHubPlayer.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/main.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/ofApp.cpp">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/ofApp.h">
+			<Option virtualFolder="src/" />
+		</Unit>
+		<Unit filename="src/omxplayer/BitstreamConverter.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/BitstreamConverter.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/COPYING">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/DllAvCodec.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/DllAvFormat.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/DllAvUtil.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/DllBCM.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/DllOMX.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/DllSwResample.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/DynamicDll.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/DynamicDll.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/File.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/File.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/KeyConfig.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/KeyConfig.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Keyboard.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Keyboard.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Makefile">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Makefile.ffmpeg">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXAudio.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXAudio.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXAudioCodecOMX.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXAudioCodecOMX.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXClock.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXClock.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXControl.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXControl.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXCore.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXCore.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXOverlay.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXOverlayCodec.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXOverlayCodecText.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXOverlayCodecText.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXOverlayText.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXPlayerAudio.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXPlayerAudio.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXPlayerSubtitles.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXPlayerSubtitles.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXPlayerVideo.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXPlayerVideo.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXReader.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXReader.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXStreamInfo.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXStreamInfo.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXSubtitleTagSami.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXSubtitleTagSami.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXThread.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXThread.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXVideo.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/OMXVideo.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/RBP.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/README.md">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Srt.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Srt.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Subtitle.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/SubtitleRenderer.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/SubtitleRenderer.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Unicode.cpp">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/Unicode.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/cores/IAudioCallback.h">
+			<Option virtualFolder="src/omxplayer/cores" />
+		</Unit>
+		<Unit filename="src/omxplayer/dbuscontrol.sh">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/avcodec.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/avdct.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/avfft.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/d3d11va.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/dirac.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/dv_profile.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/dxva2.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/jni.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/mediacodec.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/qsv.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/vaapi.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/vda.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/vdpau.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/version.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/videotoolbox.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/vorbis_parser.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec/xvmc.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavcodec" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavdevice/avdevice.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavdevice" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavdevice/version.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavdevice" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter/avfilter.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter/avfiltergraph.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter/buffersink.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter/buffersrc.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter/version.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavfilter" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavformat/avformat.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavformat" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavformat/avio.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavformat" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavformat/version.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavformat" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/adler32.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/aes.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/aes_ctr.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/attributes.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/audio_fifo.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/avassert.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/avconfig.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/avstring.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/avutil.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/base64.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/blowfish.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/bprint.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/bswap.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/buffer.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/camellia.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/cast5.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/channel_layout.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/common.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/cpu.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/crc.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/des.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/dict.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/display.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/downmix_info.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/error.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/eval.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/ffversion.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/fifo.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/file.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/frame.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/hash.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/hmac.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/hwcontext.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/hwcontext_cuda.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/hwcontext_dxva2.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/hwcontext_qsv.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/hwcontext_vaapi.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/hwcontext_vdpau.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/imgutils.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/intfloat.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/intreadwrite.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/lfg.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/log.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/lzo.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/macros.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/mastering_display_metadata.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/mathematics.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/md5.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/mem.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/motion_vector.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/murmur3.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/opt.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/parseutils.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/pixdesc.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/pixelutils.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/pixfmt.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/random_seed.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/rational.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/rc4.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/replaygain.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/ripemd.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/samplefmt.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/sha.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/sha512.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/spherical.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/stereo3d.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/tea.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/threadmessage.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/time.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/timecode.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/timestamp.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/tree.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/twofish.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/version.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil/xtea.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libavutil" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libswresample/swresample.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libswresample" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libswresample/version.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libswresample" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libswscale/swscale.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libswscale" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/include/libswscale/version.h">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/include/libswscale" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/libavcodec.so.57.89.100">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/libavdevice.so.57.6.100">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/libavfilter.so.6.82.100">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/libavformat.so.57.71.100">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/libavutil.so.55.58.100">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/libswresample.so.2.7.100">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/libswscale.so.4.6.100">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig/libavcodec.pc">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig/libavdevice.pc">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig/libavfilter.pc">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig/libavformat.pc">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig/libavutil.pc">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig/libswresample.pc">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig" />
+		</Unit>
+		<Unit filename="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig/libswscale.pc">
+			<Option virtualFolder="src/omxplayer/ffmpeg_compiled/usr/local/lib/pkgconfig" />
+		</Unit>
+		<Unit filename="src/omxplayer/fonts/FreeSans.ttf">
+			<Option virtualFolder="src/omxplayer/fonts" />
+		</Unit>
+		<Unit filename="src/omxplayer/fonts/FreeSansOblique.ttf">
+			<Option virtualFolder="src/omxplayer/fonts" />
+		</Unit>
+		<Unit filename="src/omxplayer/gen_version.sh">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/guilib/Geometry.h">
+			<Option virtualFolder="src/omxplayer/guilib" />
+		</Unit>
+		<Unit filename="src/omxplayer/help.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/keys.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/ConvUtils.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/OMXAlsa.cpp">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/OMXAlsa.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/PlatformDefs.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/PlatformInclude.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/RBP.cpp">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/RBP.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/XMemUtils.cpp">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/XMemUtils.d">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/XMemUtils.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/XSyncUtils.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/stat_utf8.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/linux/stdio_utf8.h">
+			<Option virtualFolder="src/omxplayer/linux" />
+		</Unit>
+		<Unit filename="src/omxplayer/omxplayer">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/omxplayer.cppx">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/prepare-native-raspbian.sh">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/profiler.sh">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/system.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/Clamp.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/Enforce.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/FunctorVisitor.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/LockBlock.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/Mailbox.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/MathUtils.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/PCMRemap.cpp">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/PCMRemap.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/RegExp.cpp">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/RegExp.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/ScopeExit.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/SingleLock.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/StdString.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/Strprintf.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/log.cpp">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/log.h">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/traits.hpp">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/variant-impl.hpp">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/utils/variant.hpp">
+			<Option virtualFolder="src/omxplayer/utils" />
+		</Unit>
+		<Unit filename="src/omxplayer/version.h">
+			<Option virtualFolder="src/omxplayer" />
+		</Unit>
+		<Unit filename="src/puBHubPlayer.cpp">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Unit filename="src/puBHubPlayer.h">
+			<Option virtualFolder="src" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<envvars />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

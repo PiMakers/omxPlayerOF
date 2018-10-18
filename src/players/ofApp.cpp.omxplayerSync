@@ -1,0 +1,141 @@
+#include "ofApp.h"
+
+int j=0;
+//--------------------------------------------------------------
+void ofApp::setup(){
+
+char* argv[] = { "OmxPlayerOF", "/home/pi/Videos/00Timecoded_Big_bunny_1.mov" , "--loop", "-r", "-b" };
+int argc = sizeof (argv)/4;
+ofLogNotice ("XXXXXXXXXX", ofToString(argc));
+///VideoPlayer.OmxPubHubPlayerCli( argc , argv);
+
+ofBackground(0,255);  // Sets the background color to red
+///ofDisableAlphaBlending();
+ofEnableAlphaBlending();
+ofEnableBlendMode (OF_BLENDMODE_SCREEN);
+
+ClientPlayer.setSyncClient = true;
+ClientPlayer.setup();
+/*
+ServerPlayer.setSyncServer = true;
+///ofLogNotice ("XXXXXXXXXX");
+ServerPlayer.setup();
+
+///VideoPlayer.getPlayer();
+*/
+}
+
+//--------------------------------------------------------------
+void ofApp::update(){
+if (!ServerPlayer.getm_stop() && Bull && !ClientPlayer.getm_stop())
+    {
+ ///       ServerPlayer.update();
+
+        if (1 || j < 100)
+        {
+ ///       ClientPlayer.update();
+            if (j<127) j++;
+            else j = 0;
+        }
+        else
+        {
+            cout << "\rUPDATED!\n";
+        }
+    }
+
+///else cout << "\rNOT_UPDATED!\n";
+
+}
+
+//--------------------------------------------------------------
+void ofApp::draw(){
+/*ofEnableBlendMode (OF_BLENDMODE_ADD);
+    ofSetColor(255,255,255,255);
+*/
+    ofDrawCircle (ofGetScreenWidth()/2, ofGetScreenHeight()/2, ofGetScreenHeight()/2);
+/*    ofSetColor( 0, 255, 0);
+ofEnableBlendMode (OF_BLENDMODE_DISABLED);
+///    cout << "\rDRAW_HAPPEND";
+*/
+}
+
+//--------------------------------------------------------------
+void ofApp::exit(){
+ClientPlayer.exit();
+ServerPlayer.exit();
+}
+//--------------------------------------------------------------
+void ofApp::keyPressed(int key){
+    if ( key == '9')
+    {
+        ClientPlayer.setPlayerUpdate(true);
+    }
+
+    if ( key == '8')
+    {
+        ClientPlayer.setPlayerUpdate(false);
+    }
+
+    if ( key == '7')
+    {
+        ClientPlayer.setm_stop();
+        cout << "m-stop is " << ClientPlayer.getm_stop() << endl;
+    }
+
+    if ( key == '6')
+    {
+        Bull = !Bull;
+    }
+
+    if ( key ) cout << key << "  KEY_WAS_PRESSED";
+}
+
+//--------------------------------------------------------------
+void ofApp::keyReleased(int key){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseMoved(int x, int y ){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseDragged(int x, int y, int button){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mousePressed(int x, int y, int button){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseReleased(int x, int y, int button){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseEntered(int x, int y){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::mouseExited(int x, int y){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::windowResized(int w, int h){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::gotMessage(ofMessage msg){
+
+}
+
+//--------------------------------------------------------------
+void ofApp::dragEvent(ofDragInfo dragInfo){
+
+}

@@ -1,0 +1,3 @@
+[submodule "omxplayer"]
+	path = omxplayer
+	url = https://github.com/popcornmix/omxplayer.git
